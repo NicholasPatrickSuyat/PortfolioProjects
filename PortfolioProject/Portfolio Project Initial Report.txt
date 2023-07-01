@@ -1,0 +1,57 @@
+Game Alrgorithm choice: Guess the murderer
+
+(Ideas: The detective(Which is the user)
+ have to interview and get clues from the 4 suspect about the crime
+ and the detective have to guess at the very end of the game.)
+
+1.) Have a 4 suspect for the crime (Suspect1,Suspect2,Suspect3, Someoneelse )
+
+2.) Create a class def function from another file suspect and evidence1
+	- def __init__
+	- def kitchen(self)
+		print: " The evidence in the kitchen is, (user input) 
+	etc.
+
+3.) The detective(user) will be at the crime scene searching for clues
+
+4.) Prompt the detective(user) where he wants to look first (Kitchen, under the bed, Basement)
+
+	Option 1 if the detective chose Kitchen, the detective will put what he sees(no break so it will ask again)
+	
+	Option 2 if the detective chose under the bed, the detective will put what he sees(no break so it will ask again)
+
+	Option 3 if the detective chose Basement, the detective will put what he sees(no break so it will ask again)
+
+	Option 4 the user has a choice to proceed to the next step(break)
+
+5.) User will be given a "dictionary" of evidence he finds before proceeding to the next step
+	- Use for loops to print ( In the Kitchen, the evidence is blood stain ) ( In the basement, the evidence is a wedding ring) etc.
+
+6.) Prompt the detective(user) which Suspect he wants to interview first? 
+	Create a variable
+		- Suspect1 = Suspect1()
+
+7.) Print a bunch of "String" or "list" of the evidence for the interview questions, There will be a choice if he is done asking questions he can proceed
+
+	Option 1 if pick, Where were you when during that night of the murder(no break so it will ask again)
+
+		- Right after the question, There will be another option if you want to add (This specific clues) to the "List" of evidence
+
+	Option 4 if pick, Proceed to the next step which is looping back to asking who he wants to interview(break)
+
+
+8.) The Suspect who is getting interviewed will give an answer depending on what question it is
+
+
+9.) After the question, The detective(user) will be asked who he wants to interview next and he will also be asked
+    if he wants to continue interviewing the suspect or he wants to proceed to the next step
+
+10.) Prompt the user to guess which suspect he thinks is the murderer
+	(No spoiler)
+	If the right suspect is chosen, the detective won
+		- print: You have won the game!
+	
+	if the wrong suspect is chosen, the detective gets fired
+		- print: You lose the game!
+
+---------------------------------------------------------------------------------------------------------------
