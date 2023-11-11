@@ -1,0 +1,31 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<article class="media content-section">
+    <div class="media-body">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="article-title">Poll Result</h3>
+                    </div>
+        
+                    <div class="panel-body">
+                        <h3 class="article-title">{{ poll.question }}</h3>
+                    </div>
+        
+                    <ul class="list-group">
+                        <li class="list-group-item">{{ poll.option_one }} &mdash; <strong>{{ poll.option_one_count }}</strong></li>
+                        <li class="list-group-item">{{ poll.option_two }} &mdash; <strong>{{ poll.option_two_count }}</strong></li>
+                        <li class="list-group-item">{{ poll.option_three }} &mdash; <strong>{{ poll.option_three_count }}</strong></li>
+                    </ul>
+        
+                    <div class="panel-footer">
+                        Total &mdash; <strong>{{ poll.total }}</strong>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+    </div>
+  </article>
+{% endblock content%}

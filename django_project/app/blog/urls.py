@@ -3,6 +3,7 @@ from .views import PostListView, PostDetailView, PostCreateView, PostUpdateView,
 from . import views
 from . import views as blog_views
 
+
 urlpatterns = [
     path('', PostListView.as_view(), name='blog-home'),
     path('announcement/', AnnounceListView.as_view(), name='announcement'),
@@ -17,9 +18,13 @@ urlpatterns = [
     path('post/<int:pk>/update/', PostUpdateView.as_view(), name='post-update'),
     path('post/<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
     path('about/', views.about, name='blog-about'),
+    path('contact', views.contact, name="contact"),
     path('bucketlist/', blog_views.bucketlist, name='bucket-list'),
     path('hangout_ideas/', blog_views.hangout_ideas, name='hangout-ideas'),
-    path('hangout_schedule/', blog_views.hangout_schedule, name='hangout-schedule'),
-    path('ranting_page/', blog_views.ranting_page, name='ranting'),
-    
+    path('calendar/', blog_views.CalendarView.as_view(), name='my-calendar'),
+    path('event/new/', blog_views.event, name='event_new'),
+    path('calendar/event/edit/<int:event_id>/', blog_views.event, name='event_edit'),
+    path('polls/<int:poll_id>/delete/', views.delete_poll, name='delete-poll'),
 ]
+
+# app_name = 'mycal'

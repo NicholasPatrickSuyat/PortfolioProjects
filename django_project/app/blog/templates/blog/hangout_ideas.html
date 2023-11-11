@@ -1,4 +1,34 @@
 {% extends "blog/base.html" %}
 {% block content %}
-    <h1>Hang-out Ideas!</h1>
+<article class="media content-section">
+    <div class="media-body">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="article-title">Available Polls</h3>
+                    </div>
+                    
+                    <div>
+                        <a class="btn btn-secondary btn-sm mt-1 mb-3" href="{% url 'create-poll' %}">New Poll</a>
+                    </div>
+    
+                    <ul class="list-group">
+                        {% for poll in polls %}
+                        <li class="list-group-item">
+                            <strong>{{ poll.question }}</strong>
+                            <span class="pull-right">
+                                <a href="{% url 'vote-poll' poll.id %}" class="btn btn-info btn-xs">Vote</a> &nbsp;
+                                <a href="{% url 'result-poll' poll.id %}" class="btn btn-secondary btn-sm mt-1 mb-1">View Results</a> &nbsp;
+                                <a href="{% url 'delete-poll' poll.id %}" class="btn btn-danger btn-sm mt-1 mb-1">Delete</a>
+                            </span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+  </article>
 {% endblock content%}

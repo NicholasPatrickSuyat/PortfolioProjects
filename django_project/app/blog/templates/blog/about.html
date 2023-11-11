@@ -1,4 +1,23 @@
 {% extends "blog/base.html" %}
 {% block content %}
-    <h1>About Page!</h1>
+<h1 style="text-align:center">About OnlyFriends</h1>
+<div class="content-section">
+    <p>"OnlyFriends" is your go-to destination for seamless communication with friends, effortless </p>
+    <p>scheduling, and the perfect platform to collectively vote on your next bucket list adventures.</p>
+  </div>
+  
+  <h2 style="text-align:center">Our Team</h2>
+  <div class="row">
+    <div class="column">
+        <div class="content-section">
+          <h2 class="article-title">Nicholas Patrick Suyat</h2>
+          <p class="title">Founder/Developer</p>
+          <p>Software Developer: Backend</p>
+          <p>Skills: Python, Django, Flask, SQL, DevOps, Docker, Git, and many more.</p>
+          <p><a class="button" href="{% url 'contact' %}">Contact</a></p>
+      </div>
+    </div>
+  
+    
+  </div>
 {% endblock content%}

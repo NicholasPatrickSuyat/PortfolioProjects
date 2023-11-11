@@ -25,4 +25,27 @@ class Announce(models.Model):
         return self.title
     
     def get_absolute_url(self):
-        return reverse('post-detail', kwargs={'pk': self.pk})
+        return reverse('announce-detail', kwargs={'pk': self.pk})
+
+class Poll(models.Model):
+    question = models.TextField()
+    option_one = models.CharField(max_length=30)
+    option_two = models.CharField(max_length=30)
+    option_three = models.CharField(max_length=30)
+    option_one_count = models.IntegerField(default=0)
+    option_two_count = models.IntegerField(default=0)
+    option_three_count = models.IntegerField(default=0)
+
+    def total(self):
+        return self.option_one_count + self.option_two_count + self.option_three_count
+    
+class Event(models.Model):
+    title = models.CharField(max_length=200)
+    description = models.TextField()
+    start_time = models.DateTimeField()
+    end_time = models.DateTimeField()
+
+    @property
+    def get_html_url(self):
+        url = f'/calendar/event/edit/{self.id}/'
+        return f'<a href="{url}"> {self.title} </a>'
